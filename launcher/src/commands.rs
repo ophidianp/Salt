@@ -17,6 +17,10 @@ use crate::AppState;
 
 pub type CmdResult<T> = Result<T, String>;
 
+/// Developer options (offline test launches) exist only in debug builds and in
+/// builds made with SALT_DEV set; the installer you ship has them compiled out.
+pub const DEV_OPTIONS: bool = cfg!(debug_assertions) || option_env!("SALT_DEV").is_some();
+
 pub fn err(e: anyhow::Error) -> String {
     format!("{e:#}")
 }
@@ -31,7 +35,7 @@ pub async fn launch_session(state: &AppState) -> anyhow::Result<Session> {
         let s = state.settings.read();
         (s.offline_test, s.offline_name.clone())
     };
-    if !has_account && offline {
+    if !has_account && offline && DEV_OPTIONS {
         let name: String = name.chars().filter(|c| c.is_ascii_alphanumeric() || *c == '_').take(16).collect();
         let name = if name.len() < 3 { "Player".to_string() } else { name };
         // Stable per-name UUID, like vanilla's offline "OfflinePlayer:<name>" ids.
@@ -133,6 +137,7 @@ pub fn app_info(state: State<'_, AppState>) -> Value {
         "os": std::env::consts::OS,
         "arch": std::env::consts::ARCH,
         "totalMemoryMb": total_memory_mb(),
+        "devOptions": DEV_OPTIONS,
     })
 }
 

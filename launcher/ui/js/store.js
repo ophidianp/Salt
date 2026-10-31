@@ -52,8 +52,8 @@ const MAX_GAME_LINES = 8000;
 const MAX_LAUNCHER_LINES = 3000;
 
 export async function initStore() {
-  const [settings, accounts, instances, running, logs] = await Promise.all([api.settings(), api.accounts(), api.instances(), api.running(), api.launcherLogs()]);
-  Object.assign(store, { settings, accounts, instances, launcherLogs: logs });
+  const [settings, accounts, instances, running, logs, info] = await Promise.all([api.settings(), api.accounts(), api.instances(), api.running(), api.launcherLogs(), api.info()]);
+  Object.assign(store, { settings, accounts, instances, launcherLogs: logs, info });
   store.running = new Set(running);
 
   listen("salt://log", (line) => {

@@ -165,8 +165,8 @@ export function playButton(id, { small = false } = {}) {
       api.kill(id).catch((err) => toast("Couldn't stop the game", String(err), "err"));
       return;
     }
-    if (!store.activeAccount() && !store.settings.offline_test) {
-      toast("Sign in first", "Add your Microsoft account to play (or enable Settings → Developer → Offline test launch).", "info");
+    if (!store.activeAccount() && !(store.info?.devOptions && store.settings.offline_test)) {
+      toast("Sign in first", store.info?.devOptions ? "Add an account to play (or enable Settings → Developer → Offline test launch)." : "Add an account to play.", "info");
       startLogin();
       return;
     }

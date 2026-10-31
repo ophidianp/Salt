@@ -5,7 +5,7 @@ import { ACCENTS, BACKGROUNDS } from "../theme.js";
 import { h, btn, toast, toggle, range, select, setting, debounce, confirmDialog, headCanvas } from "../ui.js";
 import { startLogin, showOnboarding } from "./onboarding.js";
 
-const SECTIONS = [
+const ALL_SECTIONS = [
   ["appearance", "Appearance", "Theme, accent, background"],
   ["game", "Game & Java", "Memory, Java, launch behaviour"],
   ["bundle", "Salt bundle", "Performance mods we install"],
@@ -16,9 +16,12 @@ const SECTIONS = [
   ["developer", "Developer", "Offline test launches"],
   ["about", "About", "Version, updates, links"],
 ];
+// The Developer page only exists in dev builds (see DEV_OPTIONS in commands.rs).
+const sections = () => ALL_SECTIONS.filter(([id]) => id !== "developer" || store.info?.devOptions);
 const RENDER = () => ({ appearance, game, bundle, accounts, integrations, social, privacy, developer, about });
 
 export function render(root, { args }) {
+  const SECTIONS = sections();
   let current = SECTIONS.some(([id]) => id === args[0]) ? args[0] : "appearance";
   const body = h("div.settings-body");
   const tabs = SECTIONS.map(([id, label, desc], i) => {
@@ -31,7 +34,7 @@ export function render(root, { args }) {
     current = id;
     tabs.forEach((t, i) => t.classList.toggle("active", SECTIONS[i][0] === id));
     body.innerHTML = "";
-    RENDER()[id]?.(body);
+    if (SECTIONS.some(([s]) => s === id)) RENDER()[id](body);
     history.replaceState(null, "", "#/settings/" + id);
   };
   root.append(
