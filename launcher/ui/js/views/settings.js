@@ -12,7 +12,7 @@ const SECTIONS = [
   ["accounts", "Accounts", "Microsoft accounts"],
   ["integrations", "Integrations", "CurseForge and other services"],
   ["social", "Friends", "Chat, presence, invites"],
-  ["privacy", "Privacy", "What Salt sends, and where"],
+  ["privacy", "Privacy", "What saltClient sends, and where"],
   ["developer", "Developer", "Offline test launches"],
   ["about", "About", "Version, updates, links"],
 ];
@@ -35,7 +35,7 @@ export function render(root, { args }) {
     history.replaceState(null, "", "#/settings/" + id);
   };
   root.append(
-    h("div.page-head", h("div", h("div.eyebrow", "Preferences"), h("h1", "Settings"), h("p", "Make Salt yours."))),
+    h("div.page-head", h("div", h("div.eyebrow", "Preferences"), h("h1", "Settings"), h("p", "Make saltClient yours."))),
     h("div.settings-layout", h("div.settings-nav", tabs), body),
   );
   RENDER()[current]?.(body);
@@ -107,11 +107,11 @@ function game(root) {
   root.append(
     h("div.section.glass", h("h2", "Launching"),
       setting("Default memory", "Used for new instances", range(s.default_memory_mb, 1024, 16384, 256, (v) => save({ default_memory_mb: v }), (v) => (v / 1024).toFixed(1) + " GB")),
-      setting("After launching", null, select([["keep_open", "Keep Salt open"], ["minimize", "Minimize Salt"], ["close", "Hide Salt until the game closes"]], s.launch_behaviour, (v) => save({ launch_behaviour: v }))),
+      setting("After launching", null, select([["keep_open", "Keep saltClient open"], ["minimize", "Minimize saltClient"], ["close", "Hide saltClient until the game closes"]], s.launch_behaviour, (v) => save({ launch_behaviour: v }))),
       setting("Parallel downloads", "Higher is faster on good connections", range(s.max_concurrent_downloads, 2, 64, 1, (v) => save({ max_concurrent_downloads: v }))),
     ),
     h("div.section.glass", h("h2", "Java"),
-      h("p.desc", "Salt downloads Eclipse Temurin automatically — Java 8 for 1.8.9, 21 for 1.21.x, 25 for 26.x. Set a path only if you want your own."),
+      h("p.desc", "saltClient downloads Eclipse Temurin automatically — Java 8 for 1.8.9, 21 for 1.21.x, 25 for 26.x. Set a path only if you want your own."),
       setting("Java executable (all instances)", "Instances can override this", java),
       setting("Extra JVM arguments", "Added to every launch", jvm),
     ),
@@ -187,10 +187,10 @@ function social(root) {
 
 function privacy(root) {
   const items = [
-    ["Sign-in", "Microsoft device-code sign-in in your own browser. Salt never sees your password."],
+    ["Sign-in", "Microsoft device-code sign-in in your own browser. saltClient never sees your password."],
     ["What's checked", "Only that the account owns Minecraft: Java Edition (Xbox → Mojang profile). Nothing else is read from your account."],
     ["Where tokens live", "Windows Credential Manager (encrypted by Windows). accounts.json only holds your username, UUID and skin URL."],
-    ["Who Salt talks to", "Microsoft, Xbox Live and Mojang (sign-in, skins, game files), Adoptium (Java), Modrinth / CurseForge / GitHub (mods you choose), and your friends server if you turn it on."],
+    ["Who saltClient talks to", "Microsoft, Xbox Live and Mojang (sign-in, skins, game files), Adoptium (Java), Modrinth / CurseForge / GitHub (mods you choose), and your friends server if you turn it on."],
     ["Telemetry", "None. No analytics, no crash uploads, no ads."],
     ["Logs", "Access tokens are scrubbed from the launcher and game logs."],
   ];
@@ -215,7 +215,7 @@ function about(root) {
   const info = h("div.muted");
   api.info().then((i) => info.append(`Version ${i.version} · ${i.os}/${i.arch} · ${(i.totalMemoryMb / 1024).toFixed(0)} GB RAM`, h("br"), h("span.mono.small", i.dataDir)));
   root.append(
-    h("div.section.glass", h("div.row", h("img", { src: "img/logo.png", style: { width: "56px" } }), h("div", h("h2", { style: { fontSize: "20px" } }, "Salt Launcher"), info))),
+    h("div.section.glass", h("div.row", h("img", { src: "img/logo.png", style: { width: "56px" } }), h("div", h("h2", { style: { fontSize: "20px" } }, "saltClient"), info))),
     h("div.section.glass", h("h2", "Built with"),
       h("p.desc", "Rust + Tauri. Inspired by OneClient (Polyfrost). Game files from Mojang; loaders from Fabric and Legacy Fabric; Java from Adoptium; mods from Modrinth and CurseForge; world hosting by e4mc. Not affiliated with Mojang or Microsoft."),
       h("div.row", btn("Run setup again", { icon: "refresh", onclick: () => showOnboarding() })),

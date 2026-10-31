@@ -1,6 +1,6 @@
 # Salt mods
 
-Client-side Fabric mods built for Salt Launcher. Each is its own jar, named
+Client-side Fabric mods built for saltClient. Each is its own jar, named
 `salt<Mod>`:
 
 | Mod | What it does | Keys |

@@ -1,4 +1,4 @@
-//! salt-core — the engine behind Salt Launcher.
+//! salt-core — the engine behind saltClient.
 //!
 //! Everything that talks to the network or touches the disk lives here so the
 //! Tauri app stays a thin layer of commands. Modules map 1:1 to launcher

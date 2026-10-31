@@ -5,7 +5,7 @@
   "name": "saltFullbright",
   "description": "G toggles full brightness.",
   "authors": [
-    "Salt Launcher"
+    "saltClient"
   ],
   "license": "MIT",
   "icon": "assets/saltfullbright/icon.png",

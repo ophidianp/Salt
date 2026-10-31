@@ -131,7 +131,7 @@ function bundleTab(root, inst, onUpdate) {
   api.bundle().then((b) => {
     const group = (title, desc, rows) => h("div.section.glass", h("h2", title), h("p.desc", desc), h("div", rows));
     box.append(
-      group("saltMODs", "Built by Salt for this launcher. Jars come from salt-mods/<version>/ (see mods/README.md).",
+      group("saltMODs", "Built by saltClient for this launcher. Jars come from salt-mods/<version>/ (see mods/README.md).",
         [...b.salt.map((m) => setting(m.name, m.description, toggle(isOn(m.id, true), (v) => set(m.id, true, v)))),
           setting("Chlorine", b.chlorine.description, toggle(isOn("chlorine", true), (v) => set("chlorine", true, v)))]),
     );
@@ -201,7 +201,7 @@ function settingsTab(root, inst, onUpdate) {
       setting("Window size", "Leave empty for the default.", h("div.row", resIn(0), "×", resIn(1))),
     ),
     h("div.section.glass", h("h2", "Java"),
-      setting("Java executable", "Empty = Salt downloads the right Java automatically.", text("java_path", "C:\\Path\\to\\javaw.exe", (v) => v.trim() || null)),
+      setting("Java executable", "Empty = saltClient downloads the right Java automatically.", text("java_path", "C:\\Path\\to\\javaw.exe", (v) => v.trim() || null)),
       setting("JVM arguments", "Extra flags, space-separated.", text("jvm_args", "-XX:+UseZGC", (v) => v.split(/\s+/).filter(Boolean))),
       setting("Game arguments", null, text("game_args", "--quickPlayMultiplayer play.example.net", (v) => v.split(/\s+/).filter(Boolean))),
     ),

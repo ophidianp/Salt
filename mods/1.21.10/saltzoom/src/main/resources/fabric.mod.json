@@ -5,7 +5,7 @@
   "name": "saltZoom",
   "description": "Hold C to zoom smoothly; scroll while zooming to zoom further.",
   "authors": [
-    "Salt Launcher"
+    "saltClient"
   ],
   "license": "MIT",
   "icon": "assets/saltzoom/icon.png",

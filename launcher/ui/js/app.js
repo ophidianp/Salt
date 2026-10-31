@@ -1,4 +1,4 @@
-// Salt Launcher UI entry: shell, router, titlebar, progress dock.
+// saltClient UI entry: shell, router, titlebar, progress dock.
 import { api, appWindow } from "./api.js";
 import { icon } from "./icons.js";
 import { store, initStore } from "./store.js";
@@ -62,7 +62,7 @@ function route() {
   const h1 = page.querySelector(".page-head h1");
   if (h1 && !h1.previousElementSibling?.classList.contains("eyebrow")) {
     const label = NAV.find(([id]) => id === (name === "instance" ? "instances" : name))?.[1];
-    if (label) h1.before(h("div.eyebrow", "Salt · " + label));
+    if (label) h1.before(h("div.eyebrow", "saltClient · " + label));
   }
   const active = name === "instance" ? "instances" : name;
   for (const b of document.querySelectorAll(".nav-link")) b.classList.toggle("active", b.dataset.route === active);
@@ -303,6 +303,6 @@ async function main() {
 }
 
 main().catch((e) => {
-  document.getElementById("view").innerHTML = `<div class="empty"><h2>Salt couldn't start</h2><p class="mono">${String(e)}</p></div>`;
+  document.getElementById("view").innerHTML = `<div class="empty"><h2>saltClient couldn't start</h2><p class="mono">${String(e)}</p></div>`;
   console.error(e);
 });

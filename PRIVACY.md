@@ -1,4 +1,4 @@
-# Salt Launcher privacy
+# saltClient privacy
 
 Short version: **Salt only checks that you own Minecraft, and keeps your
 sign-in on your PC.** No analytics, no telemetry, no ads.

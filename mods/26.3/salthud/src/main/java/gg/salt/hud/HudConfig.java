@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * config/salthud.json — the same file the Salt Launcher HUD manager writes.
+ * config/salthud.json — the same file the saltClient HUD manager writes.
  * Positions are screen fractions (0–1) measured from {@link Element#anchor},
  * so a layout looks the same at any resolution or GUI scale.
  */

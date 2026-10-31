@@ -5,7 +5,7 @@
   "name": "saltToggleSprint",
   "description": "Toggle sprint (V) and sneak (B) instead of holding them.",
   "authors": [
-    "Salt Launcher"
+    "saltClient"
   ],
   "license": "MIT",
   "icon": "assets/salttogglesprint/icon.png",

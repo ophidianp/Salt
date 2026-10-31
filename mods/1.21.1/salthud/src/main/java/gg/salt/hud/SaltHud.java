@@ -13,7 +13,7 @@ import net.minecraft.resources.ResourceLocation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/** saltHUD — the Salt Launcher HUD: FPS, CPS, keystrokes, armor, potions… */
+/** saltHUD — the saltClient HUD: FPS, CPS, keystrokes, armor, potions… */
 public class SaltHud implements ClientModInitializer {
 	public static final String MOD_ID = "salthud";
 	public static final Logger LOGGER = LoggerFactory.getLogger("saltHUD");

@@ -134,7 +134,7 @@ async fn status(s: &mut TcpStream, protocol: i32) -> Result<()> {
         "version": { "name": "Salt sign-in", "protocol": protocol },
         "players": { "max": 1, "online": 0 },
         "description": [
-            { "text": "Salt Launcher sign-in\n", "color": "aqua", "bold": true },
+            { "text": "saltClient sign-in\n", "color": "aqua", "bold": true },
             { "text": "Join to prove you own Minecraft", "color": "gray" }
         ]
     });
@@ -198,7 +198,7 @@ async fn login(s: &mut TcpStream, protocol: i32, key: &RsaPrivateKey, public_der
         }
     };
     let ok = json!([
-        { "text": "Salt Launcher\n\n", "color": "aqua", "bold": true },
+        { "text": "saltClient\n\n", "color": "aqua", "bold": true },
         { "text": format!("Signed in as {}.\n", profile.name), "color": "white" },
         { "text": "You can close Minecraft and go back to Salt.", "color": "gray" }
     ]);
@@ -208,7 +208,7 @@ async fn login(s: &mut TcpStream, protocol: i32, key: &RsaPrivateKey, public_der
 
 fn rejected(why: &str) -> serde_json::Value {
     json!([
-        { "text": "Salt Launcher\n\n", "color": "aqua", "bold": true },
+        { "text": "saltClient\n\n", "color": "aqua", "bold": true },
         { "text": why, "color": "white" }
     ])
 }

@@ -1,7 +1,7 @@
 {
   "$schema": "../gen/schemas/desktop-schema.json",
   "identifier": "default",
-  "description": "Salt Launcher main window. App commands are Salt's own; only window controls and events are granted from Tauri core.",
+  "description": "saltClient main window. App commands are Salt's own; only window controls and events are granted from Tauri core.",
   "windows": ["main"],
   "permissions": [
     "core:default",

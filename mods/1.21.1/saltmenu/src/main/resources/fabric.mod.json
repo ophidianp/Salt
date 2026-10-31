@@ -5,7 +5,7 @@
   "name": "saltMenu",
   "description": "Salt's clean black title screen. \"Classic menu\" opens the normal one.",
   "authors": [
-    "Salt Launcher"
+    "saltClient"
   ],
   "license": "MIT",
   "icon": "assets/saltmenu/icon.png",

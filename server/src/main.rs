@@ -1,5 +1,5 @@
 //! salt-social — friends, presence, direct messages and world invites for
-//! Salt Launcher.
+//! saltClient.
 //!
 //! * Identity is proven with Mojang's `hasJoined` check (see
 //!   `salt_core::social`), so this server never receives access tokens.

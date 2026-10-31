@@ -5,7 +5,7 @@
   "name": "saltFreelook",
   "description": "Hold Left Alt to look around without turning your player.",
   "authors": [
-    "Salt Launcher"
+    "saltClient"
   ],
   "license": "MIT",
   "icon": "assets/saltfreelook/icon.png",

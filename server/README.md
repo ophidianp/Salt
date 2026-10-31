@@ -1,7 +1,7 @@
 # salt-social
 
 Friends, presence ("Playing 26.3"), direct messages and world invites for
-Salt Launcher. One small Rust binary; host it anywhere.
+saltClient. One small Rust binary; host it anywhere.
 
 ```powershell
 cargo run -p salt-social --release -- 0.0.0.0:7878

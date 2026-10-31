@@ -5,7 +5,7 @@
   "name": "saltConfig",
   "description": "One settings screen for every Salt mod, and the mod list (replaces Mod Menu; works with Cloth Config). Press Right Shift.",
   "authors": [
-    "Salt Launcher"
+    "saltClient"
   ],
   "license": "MIT",
   "icon": "assets/saltconfig/icon.png",

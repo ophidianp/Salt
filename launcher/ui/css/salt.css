@@ -1,4 +1,4 @@
-/* Salt Launcher — design system, modelled on the Chlorine site
+/* saltClient — design system, modelled on the Chlorine site
    (ophidianp.github.io/chlorine): floating pill toolbar, DM Sans / Manrope /
    DM Mono, pill buttons, soft blur-in reveals. Background stays black.
    Accent, radius, speed etc. are CSS variables set live by js/theme.js. */

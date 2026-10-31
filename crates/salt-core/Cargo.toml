@@ -1,6 +1,6 @@
 [package]
 name = "salt-core"
-description = "Launcher engine for Salt Launcher: auth, metadata, downloads, instances, launching, Modrinth/CurseForge."
+description = "Launcher engine for saltClient: auth, metadata, downloads, instances, launching, Modrinth/CurseForge."
 version.workspace = true
 edition.workspace = true
 license.workspace = true

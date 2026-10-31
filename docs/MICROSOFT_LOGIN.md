@@ -10,7 +10,7 @@ Salt; end users never see it once it's baked into a build.
 ## 1. Register an Azure app
 
 1. Go to <https://portal.azure.com> → **App registrations** → **New registration**.
-2. Name: `Salt Launcher`. Supported account types: **Personal Microsoft accounts only**.
+2. Name: `saltClient`. Supported account types: **Personal Microsoft accounts only**.
 3. Redirect URI: leave empty (device code flow doesn't need one).
 4. After creating it, open **Authentication** → set **Allow public client flows** to **Yes** → Save.
 5. Copy the **Application (client) ID** (a GUID) from the Overview page.

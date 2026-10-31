@@ -1,4 +1,4 @@
-# Salt Launcher
+# saltClient
 
 A clean, glassy Minecraft launcher written in **Rust** (Tauri), with its own
 HUD mod (**saltHUD**), a set of **saltMODs**, the usual performance mods out of

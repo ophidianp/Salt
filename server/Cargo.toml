@@ -1,6 +1,6 @@
 [package]
 name = "salt-social"
-description = "Friends, presence, chat and world invites for Salt Launcher. Self-hostable."
+description = "Friends, presence, chat and world invites for saltClient. Self-hostable."
 version.workspace = true
 edition.workspace = true
 license.workspace = true

@@ -1,6 +1,6 @@
 [package]
 name = "salt-launcher"
-description = "Salt Launcher — a clean, glassy Minecraft launcher"
+description = "saltClient — a clean, glassy Minecraft launcher"
 version.workspace = true
 edition.workspace = true
 license.workspace = true

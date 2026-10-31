@@ -23,7 +23,7 @@ export function render(root, { query }) {
   };
   root.append(
     h("div.page-head",
-      h("div", h("h1", "Logs"), h("p", "Everything Salt and your games print, live.")),
+      h("div", h("h1", "Logs"), h("p", "Everything saltClient and your games print, live.")),
       h("div.row", picker, tabs([["launcher", "Launcher", "terminal"], ["game", "Game", "gamepad"]], source, (s) => { source = s; paintPicker(); draw(); })),
     ),
     body,

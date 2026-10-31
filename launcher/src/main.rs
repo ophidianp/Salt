@@ -37,7 +37,7 @@ fn main() {
             paths.ensure()?;
             let mut settings = Settings::load(&paths);
             let reporter = Arc::new(reporter::AppReporter::new(app.handle().clone(), paths.logs()));
-            reporter.info(&format!("Salt Launcher {} starting — data folder {}", salt_core::LAUNCHER_VERSION, paths.root.display()));
+            reporter.info(&format!("saltClient {} starting — data folder {}", salt_core::LAUNCHER_VERSION, paths.root.display()));
             let before = settings.seeded_versions.len();
             match salt_core::instance::seed_defaults(&paths, settings.default_memory_mb, &mut settings.seeded_versions) {
                 Ok(made) => {
@@ -130,5 +130,5 @@ fn main() {
             social::social_send,
         ])
         .run(tauri::generate_context!())
-        .expect("error while running Salt Launcher");
+        .expect("error while running saltClient");
 }

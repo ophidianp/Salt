@@ -6,10 +6,10 @@ import { ACCENTS, BACKGROUNDS, applyTheme } from "../theme.js";
 import { h, btn, toast, toggle, range, modal, headCanvas } from "../ui.js";
 
 const PRIVACY = [
-  ["Your password never touches Salt", "You sign in on microsoft.com in your own browser. Salt only receives a sign-in token."],
-  ["Only ownership is checked", "Salt asks Xbox and Mojang one question: does this account own Minecraft: Java Edition? Nothing else is read."],
+  ["Your password never touches saltClient", "You sign in on microsoft.com in your own browser. saltClient only receives a sign-in token."],
+  ["Only ownership is checked", "saltClient asks Xbox and Mojang one question: does this account own Minecraft: Java Edition? Nothing else is read."],
   ["Tokens stay on this PC, encrypted", "Sign-in tokens live in Windows Credential Manager — never in plain files, never in logs."],
-  ["No analytics, no tracking", "Salt sends no telemetry. It only contacts Microsoft, Mojang, and the mod sites you browse."],
+  ["No analytics, no tracking", "saltClient sends no telemetry. It only contacts Microsoft, Mojang, and the mod sites you browse."],
 ];
 
 export function showOnboarding() {
@@ -41,7 +41,7 @@ export function showOnboarding() {
   function welcome(el) {
     el.append(
       h("img.welcome-logo", { src: "img/logo.png", alt: "" }),
-      h("h1", "Welcome to Salt"),
+      h("h1", "Welcome to saltClient"),
       h("p.lead", "A clean, fast Minecraft launcher with saltHUD, performance mods out of the box, Modrinth + CurseForge, skins, friends and world hosting. Let's get you set up — it takes about a minute."),
     );
     el.next = next("Get started");
@@ -50,7 +50,7 @@ export function showOnboarding() {
   function privacy(el) {
     el.append(
       h("h1", "Your account stays yours"),
-      h("p.lead", "Here's exactly what Salt does when you sign in."),
+      h("p.lead", "Here's exactly what saltClient does when you sign in."),
       h("div.privacy-list", PRIVACY.map(([b, s]) => h("div.pl.card", { html: icon("shield") }, h("div", h("b", b), h("span", s))))),
     );
     el.next = next("Sounds good");
@@ -58,7 +58,7 @@ export function showOnboarding() {
 
   function signIn(el) {
     const a = store.activeAccount();
-    el.append(h("h1", "Sign in"), h("p.lead", "Prove you own Minecraft: Java Edition. Salt never sees your password."));
+    el.append(h("h1", "Sign in"), h("p.lead", "Prove you own Minecraft: Java Edition. saltClient never sees your password."));
     const body = h("div.col", { style: { gap: "14px" } });
     el.appendChild(body);
     if (a) {
@@ -188,7 +188,7 @@ export function loginPanel(onDone) {
         btn("Use Microsoft instead", { cls: "ghost", onclick: () => { api.verifyCancel(); microsoft(); } }),
       ),
       h("div.row.small.muted", h("div.spinner"), "Waiting for you to join… you'll be kicked with a \"Signed in\" message."),
-      h("div.callout", h("b", "What Salt sees: "), "only your public name, UUID and skin, confirmed by Mojang. No password or token. ",
+      h("div.callout", h("b", "What saltClient sees: "), "only your public name, UUID and skin, confirmed by Mojang. No password or token. ",
         "Verified accounts play singleplayer, LAN and offline-mode servers; online-mode servers need Microsoft sign-in."),
     );
     const off = store.on("login", (r) => {
@@ -216,7 +216,7 @@ function msPanel(onDone) {
     if (!store.settings.microsoft_client_id) {
       const input = h("input.input", { placeholder: "00000000-0000-0000-0000-000000000000" });
       box.append(
-        h("div.callout.warn", h("b", "Microsoft sign-in isn't configured yet. "), "Salt needs an Azure app (client) ID approved for Minecraft. See docs/MICROSOFT_LOGIN.md in the project, then paste the ID here."),
+        h("div.callout.warn", h("b", "Microsoft sign-in isn't configured yet. "), "saltClient needs an Azure app (client) ID approved for Minecraft. See docs/MICROSOFT_LOGIN.md in the project, then paste the ID here."),
         h("div.field", h("label", "Azure application (client) ID"), input),
         h("div.row", btn("Save and continue", { cls: "primary", onclick: async () => {
           if (!/^[0-9a-f-]{36}$/i.test(input.value.trim())) return toast("That doesn't look like a client ID", "It's a 36-character GUID.", "err");
@@ -261,7 +261,7 @@ function msPanel(onDone) {
 export function startLogin() {
   modal((close) => [
     h("h2", "Add an account"),
-    h("p.m-sub", "Salt only checks that the account owns Minecraft. Your password never reaches Salt."),
+    h("p.m-sub", "saltClient only checks that the account owns Minecraft. Your password never reaches Salt."),
     loginPanel(() => close()),
     h("div.m-actions", btn("Close", { onclick: () => { api.verifyCancel(); close(); } })),
   ]);

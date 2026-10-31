@@ -3,9 +3,9 @@
   "id": "salthud",
   "version": "${version}",
   "name": "saltHUD",
-  "description": "The Salt Launcher HUD: FPS, CPS, ping, coordinates, keystrokes, armor, potions, clock, speed and more. Edit it in the launcher or press Right Shift in game.",
+  "description": "The saltClient HUD: FPS, CPS, ping, coordinates, keystrokes, armor, potions, clock, speed and more. Edit it in the launcher or press Right Shift in game.",
   "authors": [
-    "Salt Launcher"
+    "saltClient"
   ],
   "license": "MIT",
   "icon": "assets/salthud/icon.png",
