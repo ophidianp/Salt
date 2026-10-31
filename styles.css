@@ -21,6 +21,7 @@
   --line-2: rgba(150, 175, 215, 0.24);
   --ok: #63e6b0;
   --warn: #ffb86b;
+  --bar-grey: #1d222b;
 
   --font: "DM Sans", "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif;
   --display: "Manrope", "Segoe UI", system-ui, sans-serif;
@@ -44,6 +45,7 @@
     --line-2: rgba(20, 40, 80, 0.2);
     --ok: #128a5b;
     --warn: #b0640f;
+    --bar-grey: #d6dae1;
     color-scheme: light;
   }
 }
@@ -58,6 +60,7 @@
   --line-2: rgba(20, 40, 80, 0.2);
   --ok: #128a5b;
   --warn: #b0640f;
+  --bar-grey: #d6dae1;
   color-scheme: light;
 }
 
@@ -192,6 +195,34 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .stat-label { color: var(--text-2); font-size: 0.92rem; }
 .stats-note { margin-bottom: 28px; max-width: 75ch; }
 
+/* RAM comparison: bars drawn to one scale (max = 479 MB), labels inside */
+.ram { margin: 18px 0 14px; display: flex; flex-direction: column; gap: 10px; }
+.ram-title { font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-3); }
+.ram-bars { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.ram-row { display: block; }
+.ram-bar {
+  --max: 479;
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  width: calc(var(--v) / var(--max) * 100%);
+  min-height: 44px;
+  padding: 0 14px;
+  border-radius: 12px;
+  background: var(--bar-grey);
+  color: var(--text);
+  font-size: 0.92rem;
+  white-space: nowrap;
+}
+.ram-bar b { font-weight: 700; overflow: hidden; text-overflow: ellipsis; }
+.ram-bar span { font-family: var(--mono); font-variant-numeric: tabular-nums; color: var(--text-2); }
+.ram-row.salt .ram-bar { background: var(--accent); color: var(--accent-ink); transition: background 0.4s var(--ease); }
+.ram-row.salt .ram-bar span { color: inherit; opacity: 0.8; }
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .ram-bar { animation: bar-grow linear both; animation-timeline: view(); animation-range: entry 10% cover 35%; }
+    @keyframes bar-grow { from { clip-path: inset(0 85% 0 0 round 12px); } to { clip-path: inset(0 0 0 0 round 12px); } }
+  }
+}
+
 .grid { display: grid; gap: 14px; }
 .features { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .feature {
@@ -292,6 +323,7 @@ kbd {
 @media (max-width: 640px) {
   .nav-links, .hide-sm { display: none; }
   .stats { grid-template-columns: minmax(0, 1fr); }
+  .ram-bar { font-size: 0.8rem; padding: 0 9px; gap: 6px; }
   .stat + .stat { border-left: 0; border-top: 1px solid var(--line); }
   .features { grid-template-columns: minmax(0, 1fr); }
   .band { grid-template-columns: minmax(0, 1fr) auto; }
