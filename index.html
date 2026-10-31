@@ -74,6 +74,13 @@
       <p class="lead">Each instance is its own Minecraft install with its own mods, worlds and settings. Salt downloads the game, Java and Fabric, then adds the mods that actually support that version.</p>
     </div>
 
+    <div class="stats" aria-label="Resource use">
+      <div class="stat"><span class="stat-num">~140<small>MB</small></span><span class="stat-label">RAM with the launcher open</span></div>
+      <div class="stat"><span class="stat-num">~5<small>MB</small></span><span class="stat-label">for the Rust core itself</span></div>
+      <div class="stat"><span class="stat-num">4.8<small>MB</small></span><span class="stat-label">installer download</span></div>
+    </div>
+    <p class="fine stats-note">Built in Rust with Tauri: the interface uses the WebView2 engine already in Windows instead of shipping its own copy of Chromium. Measured in Task Manager on Windows 11, launcher plus its WebView2 processes.</p>
+
     <div class="grid features">
       <article class="feature">
         <h3>The Salt bundle</h3>
