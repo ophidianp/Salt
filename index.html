@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Salt Launcher</title>
+<meta name="description" content="Salt is a fast Minecraft launcher for Windows with its own Fabric mods: a drag-and-drop HUD, zoom, freelook, toggle sprint, fullbright and a cleaner menu, on every release from 1.21 to 26.3.">
+<meta name="theme-color" content="#000000">
+<meta property="og:title" content="Salt Launcher">
+<meta property="og:description" content="Lightweight. Clean. Yours. A Minecraft launcher with its own HUD and mods, from 1.21 to 26.3.">
+<meta property="og:image" content="assets/img/title-screen.webp">
+<link rel="icon" href="assets/img/logo.png">
+<link rel="preload" href="assets/fonts/Manrope-500_800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav-wrap">
+  <nav class="nav" aria-label="Main">
+    <a class="brand" href="#top"><img src="assets/img/logo.png" alt="" width="26" height="26">Salt</a>
+    <div class="nav-links">
+      <a href="#launcher">Launcher</a>
+      <a href="#in-game">In game</a>
+      <a href="#versions">Versions</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <a class="pill ghost small hide-sm" href="https://github.com/ophidianp/Salt">GitHub</a>
+    <a class="pill small" href="https://github.com/ophidianp/Salt/releases/latest/download/Salt-Launcher-Setup.exe">Download</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <section class="hero wrap">
+    <div class="hero-copy">
+      <p class="eyebrow">Minecraft launcher · Windows 10 &amp; 11</p>
+      <h1>Salt</h1>
+      <p class="tagline">Lightweight. Clean. <span class="accent-text">Yours.</span></p>
+      <p class="lead">A fast launcher with its own Fabric mods built in: a HUD you drag into place, zoom, freelook, toggle sprint, fullbright and a cleaner menu. It sets up every release from 1.21 to 26.3 for you.</p>
+      <div class="cta">
+        <a class="pill big" href="https://github.com/ophidianp/Salt/releases/latest/download/Salt-Launcher-Setup.exe">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16" /></svg>
+          Download for Windows
+        </a>
+        <a class="pill ghost big" href="https://github.com/ophidianp/Salt">View source</a>
+      </div>
+      <p class="fine">v0.1.0 · free · needs a Minecraft: Java Edition account</p>
+    </div>
+
+    <figure class="shot hero-shot">
+      <img src="assets/img/title-screen.webp" width="1600" height="900" alt="Salt's title screen in Minecraft 26.3: the Salt cube logo, the tagline Lightweight. Clean. Yours., and rounded Singleplayer, Multiplayer, Options, Mods and Quit buttons over a blurred world.">
+      <figcaption>The Salt title screen, in game on 26.3</figcaption>
+    </figure>
+  </section>
+
+  <section class="accent-bar wrap" aria-labelledby="accent-h">
+    <div>
+      <h2 id="accent-h" class="h-sm">One accent, everywhere</h2>
+      <p>Pick a colour in the launcher and the game follows: buttons, sliders, the HUD and the config screen all pick it up. Try it on this page.</p>
+    </div>
+    <div class="swatches" role="radiogroup" aria-label="Accent colour">
+      <button class="swatch" role="radio" aria-checked="true" data-accent="#7cc8ff" style="--c:#7cc8ff" aria-label="Ice blue"></button>
+      <button class="swatch" role="radio" aria-checked="false" data-accent="#f06aa6" style="--c:#f06aa6" aria-label="Pink"></button>
+      <button class="swatch" role="radio" aria-checked="false" data-accent="#63e6b0" style="--c:#63e6b0" aria-label="Mint"></button>
+      <button class="swatch" role="radio" aria-checked="false" data-accent="#c4a8ff" style="--c:#c4a8ff" aria-label="Lavender"></button>
+      <button class="swatch" role="radio" aria-checked="false" data-accent="#ffb86b" style="--c:#ffb86b" aria-label="Amber"></button>
+    </div>
+  </section>
+
+  <section id="launcher" class="wrap section">
+    <div class="section-head">
+      <p class="eyebrow">The launcher</p>
+      <h2>Make an instance. Press Play.</h2>
+      <p class="lead">Each instance is its own Minecraft install with its own mods, worlds and settings. Salt downloads the game, Java and Fabric, then adds the mods that actually support that version.</p>
+    </div>
+
+    <div class="grid features">
+      <article class="feature">
+        <h3>The Salt bundle</h3>
+        <p>Performance mods go in automatically, matched to your version: Sodium, Lithium, FerriteCore, EntityCulling, ImmediatelyFast, ModernFix, Chlorine and more. Switch any of them off in Settings.</p>
+      </article>
+      <article class="feature">
+        <h3>Modrinth and CurseForge</h3>
+        <p>Browse mods, resource packs, shaders and modpacks from both sites inside the launcher, and install with one click. Dependencies come along.</p>
+      </article>
+      <article class="feature">
+        <h3>HUD manager</h3>
+        <p>Lay out FPS, CPS, ping, coordinates, keystrokes, armour, potions and more before you even launch. The layout syncs into every instance.</p>
+      </article>
+      <article class="feature">
+        <h3>Sign-in that stays on your PC</h3>
+        <p>Sign in through Microsoft in your own browser, so Salt never sees your password. Tokens live in Windows Credential Manager. No analytics, no ads.</p>
+        <a class="more" href="https://github.com/ophidianp/Salt/blob/main/PRIVACY.md">Read the privacy notes</a>
+      </article>
+      <article class="feature">
+        <h3>Friends</h3>
+        <p>See what friends are playing, chat, and send world invites. It runs on a small server you can host yourself, and it only ever learns your username.</p>
+      </article>
+      <article class="feature">
+        <h3>Logs you can read</h3>
+        <p>Game and launcher logs in one place, with sign-in tokens scrubbed out, so you can share a crash without sharing your account.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="in-game" class="wrap section">
+    <div class="section-head">
+      <p class="eyebrow">In game</p>
+      <h2>Salt's own mods</h2>
+      <p class="lead">Small, separate Fabric mods, one jar each. All keys can be changed under Controls → Salt.</p>
+    </div>
+
+    <div class="split">
+      <figure class="shot">
+        <img src="assets/img/salt-config.webp" width="1600" height="900" loading="lazy" alt="The saltConfig screen: a rounded dark window listing the Salt mods and other installed mods on the left, with toggles and options for saltFreelook on the right.">
+        <figcaption>saltConfig: every mod's settings in one place, including other mods' Cloth Config screens</figcaption>
+      </figure>
+
+      <dl class="mods">
+        <div class="mod"><dt>saltHUD</dt><dd>FPS, CPS, ping, coordinates, keystrokes, armour, potions, clock, speed, reach, combo and a custom crosshair. Drag, resize and toggle each one in the editor.</dd><dd class="keys"><kbd>Right Shift</kbd> → Edit HUD layout</dd></div>
+        <div class="mod"><dt>saltMenu</dt><dd>A clean title screen, and rounded, accent-tinted buttons, sliders and lists across vanilla menus. One click brings back the classic menu.</dd></div>
+        <div class="mod"><dt>saltZoom</dt><dd>Smooth zoom with scroll to zoom further and a cinematic camera.</dd><dd class="keys"><kbd>C</kbd> hold</dd></div>
+        <div class="mod"><dt>saltFreelook</dt><dd>Look around without turning, in third person.</dd><dd class="keys"><kbd>Left Alt</kbd> hold</dd></div>
+        <div class="mod"><dt>saltToggleSprint</dt><dd>Toggle sprint and sneak, with a small on-screen indicator.</dd><dd class="keys"><kbd>V</kbd> <kbd>B</kbd></dd></div>
+        <div class="mod"><dt>saltFullbright</dt><dd>Full brightness without touching your gamma setting.</dd><dd class="keys"><kbd>G</kbd></dd></div>
+        <div class="mod"><dt>saltConfig</dt><dd>The settings screen for all of the above, plus a mod list.</dd><dd class="keys"><kbd>Right Shift</kbd></dd></div>
+      </dl>
+    </div>
+
+    <figure class="shot wide">
+      <img src="assets/img/options-reskin.webp" width="1600" height="900" loading="lazy" alt="Minecraft's Options screen with Salt's rounded dark buttons and an accent-filled FOV slider.">
+      <figcaption>Vanilla Options, reskinned. Modded screens that use vanilla widgets get the same look.</figcaption>
+    </figure>
+  </section>
+
+  <section id="versions" class="wrap section">
+    <div class="section-head">
+      <p class="eyebrow">Versions</p>
+      <h2>From 1.21 to 26.3</h2>
+      <p class="lead">Minecraft changes its code a little almost every release, so Salt's mods are built once per group of versions that share the same code. Every release in a group gets the same jars.</p>
+    </div>
+
+    <ol class="bands">
+      <li class="band"><span class="band-name">26.3</span><span class="band-vers"><code>26.3</code></span><span class="status ok">Tested</span></li>
+      <li class="band"><span class="band-name">26.2</span><span class="band-vers"><code>26.2</code></span><span class="status ok">Tested</span></li>
+      <li class="band"><span class="band-name">26.1</span><span class="band-vers"><code>26.1</code><code>26.1.1</code><code>26.1.2</code></span><span class="status ok">Tested</span></li>
+      <li class="band"><span class="band-name">1.21.11</span><span class="band-vers"><code>1.21.11</code></span><span class="status ok">Tested</span></li>
+      <li class="band"><span class="band-name">1.21.9</span><span class="band-vers"><code>1.21.9</code><code>1.21.10</code></span><span class="status ok">Tested</span></li>
+      <li class="band"><span class="band-name">1.21.6</span><span class="band-vers"><code>1.21.6</code><code>1.21.7</code><code>1.21.8</code></span><span class="status ok">Tested</span></li>
+      <li class="band"><span class="band-name">1.21.2</span><span class="band-vers"><code>1.21.2</code><code>1.21.3</code><code>1.21.4</code><code>1.21.5</code></span><span class="status">Builds</span></li>
+      <li class="band"><span class="band-name">1.21</span><span class="band-vers"><code>1.21</code><code>1.21.1</code></span><span class="status ok">Tested</span></li>
+      <li class="band"><span class="band-name">1.8.9</span><span class="band-vers"><code>1.8</code><code>1.8.9</code></span><span class="status soon">Launcher only, mods coming</span></li>
+    </ol>
+    <p class="fine">"Tested" means the game booted to the Salt title screen with every Salt mod loaded. Vanilla instances work on any of these versions too.</p>
+  </section>
+
+  <section id="faq" class="wrap section">
+    <div class="section-head">
+      <p class="eyebrow">FAQ</p>
+      <h2>Questions</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>Do I need to own Minecraft?</summary>
+        <p>Yes. Salt launches the official Minecraft: Java Edition and checks that your account owns it. It doesn't unlock or share the game.</p>
+      </details>
+      <details>
+        <summary>Will this get me banned on servers?</summary>
+        <p>Salt's mods are visual and quality-of-life only, like other popular PvP clients: HUD, zoom, freelook, toggle sprint and fullbright. Some servers have their own rules about client mods, so check a server's rules if you're unsure.</p>
+      </details>
+      <details>
+        <summary>What does Salt collect?</summary>
+        <p>Nothing for itself. There are no analytics or telemetry. Sign-in tokens stay in Windows Credential Manager and only go to Microsoft and Mojang. <a href="https://github.com/ophidianp/Salt/blob/main/PRIVACY.md">Full privacy notes</a>.</p>
+      </details>
+      <details>
+        <summary>Mac or Linux?</summary>
+        <p>Not yet. Salt is built with Tauri, so other platforms are possible later, but only Windows is built and tested today.</p>
+      </details>
+      <details>
+        <summary>Windows says the installer isn't recognised</summary>
+        <p>The installer isn't code-signed yet, so SmartScreen may warn you. Click <em>More info</em>, then <em>Run anyway</em>. You can also build it yourself from the source.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="wrap closer">
+    <img src="assets/img/logo.png" alt="" width="64" height="64">
+    <h2>Ready when you are</h2>
+    <div class="cta center">
+      <a class="pill big" href="https://github.com/ophidianp/Salt/releases/latest/download/Salt-Launcher-Setup.exe">Download for Windows</a>
+      <a class="pill ghost big" href="https://github.com/ophidianp/Salt/releases">All releases</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer wrap">
+  <p>Salt is not an official Minecraft product. Not approved by or associated with Mojang or Microsoft.</p>
+  <p><a href="https://github.com/ophidianp/Salt">GitHub</a> · <a href="https://github.com/ophidianp/Salt/blob/main/PRIVACY.md">Privacy</a> · <a href="https://github.com/ophidianp/Salt/issues">Report a bug</a></p>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>
