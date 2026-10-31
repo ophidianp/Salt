@@ -247,7 +247,11 @@ kbd {
 .faq summary::-webkit-details-marker { display: none; }
 .faq summary::after { content: "+"; position: absolute; right: 4px; top: 14px; font-family: var(--mono); font-size: 1.3rem; color: var(--accent); transition: transform 0.25s var(--ease); }
 .faq details[open] summary::after { transform: rotate(45deg); }
+.faq .answer { overflow: hidden; }
 .faq details p { color: var(--text-2); padding: 0 0 20px; max-width: 70ch; }
+.faq summary { transition: color 0.2s, padding-left 0.3s var(--ease); }
+.faq summary:hover { color: var(--accent); padding-left: 6px; }
+.faq details.closing summary::after { transform: rotate(0deg); }
 .faq a { color: var(--accent); }
 
 /* closer + footer */
