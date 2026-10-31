@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "saltmenu",
+  "version": "${version}",
+  "name": "saltMenu",
+  "description": "Salt's clean black title screen. \"Classic menu\" opens the normal one.",
+  "authors": [
+    "Salt Launcher"
+  ],
+  "license": "MIT",
+  "icon": "assets/saltmenu/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "gg.salt.menu.SaltMenu"
+    ]
+  },
+  "mixins": [
+    "saltmenu.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.19.5",
+    "minecraft": "~26.3",
+    "java": ">=25",
+    "fabric-api": "*",
+    "saltconfig": "*"
+  }
+}

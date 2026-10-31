@@ -1,0 +1,11 @@
+{
+	"required": false,
+	"package": "gg.salt.fullbright.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"client": [
+		"LightTextureMixin"
+	],
+	"injectors": {
+		"defaultRequire": 0
+	}
+}

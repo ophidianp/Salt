@@ -1,0 +1,19 @@
+[package]
+name = "salt-social"
+description = "Friends, presence, chat and world invites for Salt Launcher. Self-hostable."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+salt-core = { path = "../crates/salt-core" }
+axum = { version = "0.7", features = ["ws"] }
+tokio.workspace = true
+futures.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+anyhow.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+chrono.workspace = true
+parking_lot = "0.12"

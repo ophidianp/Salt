@@ -1,0 +1,53 @@
+// Shared build for every Salt mod on Minecraft 26.3. Each subproject is a
+// separate client-only Fabric mod jar (salthud, saltzoom, …).
+//
+// 26.x ships unobfuscated with Mojang's names, so there is no mappings line
+// and no remapJar step (same setup as Chlorine).
+
+plugins {
+	id 'net.fabricmc.fabric-loom' version "${loom_version}" apply false
+}
+
+// The repo lives in OneDrive, which locks build files mid-sync (breaking
+// `clean`). Build output goes to a local folder instead; build-all.ps1
+// collects the jars from there.
+def localBuildRoot = file("${System.getProperty('user.home')}/SaltLauncherBuild/mods-build/${rootProject.minecraft_version}")
+
+subprojects {
+	apply plugin: 'net.fabricmc.fabric-loom'
+
+	layout.buildDirectory = new File(localBuildRoot, project.name)
+
+	version = "${rootProject.mod_version}+${rootProject.minecraft_version}"
+	group = 'gg.salt'
+
+	base {
+		archivesName = project.name
+	}
+
+	dependencies {
+		minecraft "com.mojang:minecraft:${rootProject.minecraft_version}"
+		implementation "net.fabricmc:fabric-loader:${rootProject.loader_version}"
+		implementation "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_api_version}"
+		// Every Salt mod registers its settings with saltConfig.
+		if (project.name != 'saltconfig') implementation project(':saltconfig')
+	}
+
+	processResources {
+		def version = project.version
+		inputs.property "version", version
+		filesMatching("fabric.mod.json") {
+			expand "version": version
+		}
+	}
+
+	tasks.withType(JavaCompile).configureEach {
+		it.options.release = 25
+		it.options.encoding = 'UTF-8'
+	}
+
+	java {
+		sourceCompatibility = JavaVersion.VERSION_25
+		targetCompatibility = JavaVersion.VERSION_25
+	}
+}

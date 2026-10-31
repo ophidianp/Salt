@@ -1,0 +1,14 @@
+// saltConfig reads Cloth Config screens to show other mods' options inline.
+// Compile-only: Cloth is optional at runtime (ClothBridge only loads when it's installed).
+repositories {
+	maven {
+		name = "Shedaniel"
+		url = "https://maven.shedaniel.me/"
+	}
+}
+
+dependencies {
+	compileOnly("me.shedaniel.cloth:cloth-config-fabric:${rootProject.cloth_config_version}") {
+		transitive = false
+	}
+}

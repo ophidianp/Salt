@@ -1,0 +1,11 @@
+{
+	"required": false,
+	"package": "gg.salt.fullbright.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"client": [
+		"LightmapExtractorMixin"
+	],
+	"injectors": {
+		"defaultRequire": 0
+	}
+}

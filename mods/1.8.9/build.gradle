@@ -1,0 +1,51 @@
+// Shared build for every Salt mod on Minecraft 1.8.9 (Legacy Fabric).
+// Each subproject is a separate client-only mod jar (salthud, saltzoom, …).
+
+plugins {
+	id 'net.fabricmc.fabric-loom-remap' version "${loom_version}" apply false
+	id 'legacy-looming' version "${loom_version}" apply false
+}
+
+// Same as the other versions: build output outside OneDrive.
+def localBuildRoot = file("${System.getProperty('user.home')}/SaltLauncherBuild/mods-build/${rootProject.minecraft_version}")
+
+subprojects {
+	apply plugin: 'net.fabricmc.fabric-loom-remap'
+	apply plugin: 'legacy-looming'
+
+	layout.buildDirectory = new File(localBuildRoot, project.name)
+
+	version = "${rootProject.mod_version}+${rootProject.minecraft_version}"
+	group = 'gg.salt'
+
+	base {
+		archivesName = project.name
+	}
+
+	dependencies {
+		minecraft "com.mojang:minecraft:${rootProject.minecraft_version}"
+		mappings(legacy.yarn(rootProject.minecraft_version, rootProject.yarn_build))
+		modImplementation "net.fabricmc:fabric-loader:${rootProject.loader_version}"
+		modImplementation "net.legacyfabric.legacy-fabric-api:legacy-fabric-api:${rootProject.legacy_fabric_api_version}"
+		// Every Salt mod registers its settings with saltConfig.
+		if (project.name != 'saltconfig') implementation project(path: ':saltconfig', configuration: 'namedElements')
+	}
+
+	processResources {
+		def version = project.version
+		inputs.property "version", version
+		filesMatching("fabric.mod.json") {
+			expand "version": version
+		}
+	}
+
+	tasks.withType(JavaCompile).configureEach {
+		it.options.encoding = 'UTF-8'
+		it.options.release = 8
+	}
+
+	java {
+		sourceCompatibility = JavaVersion.VERSION_1_8
+		targetCompatibility = JavaVersion.VERSION_1_8
+	}
+}

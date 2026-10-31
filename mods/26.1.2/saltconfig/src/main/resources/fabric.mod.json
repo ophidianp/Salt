@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "saltconfig",
+  "version": "${version}",
+  "name": "saltConfig",
+  "description": "One settings screen for every Salt mod, and the mod list (replaces Mod Menu; works with Cloth Config). Press Right Shift.",
+  "authors": [
+    "Salt Launcher"
+  ],
+  "license": "MIT",
+  "icon": "assets/saltconfig/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "gg.salt.config.SaltConfig"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.5",
+    "minecraft": "~26.1",
+    "java": ">=25",
+    "fabric-api": "*"
+  }
+}

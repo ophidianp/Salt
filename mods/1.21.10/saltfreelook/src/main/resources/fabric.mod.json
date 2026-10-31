@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "saltfreelook",
+  "version": "${version}",
+  "name": "saltFreelook",
+  "description": "Hold Left Alt to look around without turning your player.",
+  "authors": [
+    "Salt Launcher"
+  ],
+  "license": "MIT",
+  "icon": "assets/saltfreelook/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "gg.salt.freelook.SaltFreelook"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.5",
+    "minecraft": ">=1.21.9 <1.21.11",
+    "java": ">=21",
+    "fabric-api": "*",
+    "saltconfig": "*"
+  },
+  "mixins": [
+    "saltfreelook.mixins.json"
+  ]
+}

@@ -1,0 +1,15 @@
+pluginManagement {
+	repositories {
+		maven {
+			name = 'Fabric'
+			url = 'https://maven.fabricmc.net/'
+		}
+		mavenCentral()
+		gradlePluginPortal()
+	}
+}
+
+rootProject.name = 'salt-mods-1.21.8'
+
+// One jar per Salt mod, each named salt<MOD>.
+include 'saltconfig', 'salthud', 'saltmenu', 'saltzoom', 'saltfreelook', 'salttogglesprint', 'saltfullbright'

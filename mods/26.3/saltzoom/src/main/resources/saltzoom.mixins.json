@@ -1,0 +1,12 @@
+{
+	"required": false,
+	"package": "gg.salt.zoom.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"client": [
+		"CameraMixin",
+		"MouseHandlerMixin"
+	],
+	"injectors": {
+		"defaultRequire": 0
+	}
+}

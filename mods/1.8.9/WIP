@@ -1,0 +1,2 @@
+Work in progress: the 1.8.9 (Legacy Fabric) Salt mods are a separate code base
+and are not written yet. build-all.ps1 skips this folder while this file exists.

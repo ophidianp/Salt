@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "saltzoom",
+  "version": "${version}",
+  "name": "saltZoom",
+  "description": "Hold C to zoom smoothly; scroll while zooming to zoom further.",
+  "authors": [
+    "Salt Launcher"
+  ],
+  "license": "MIT",
+  "icon": "assets/saltzoom/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "gg.salt.zoom.SaltZoom"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.5",
+    "minecraft": "~1.21.11",
+    "java": ">=21",
+    "fabric-api": "*",
+    "saltconfig": "*"
+  },
+  "mixins": [
+    "saltzoom.mixins.json"
+  ]
+}

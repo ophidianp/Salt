@@ -1,0 +1,16 @@
+/target
+**/target
+mods/**/build/
+mods/**/.gradle/
+mods/**/run/
+mods/dist/
+/dist/
+*.log
+.idea/
+.vscode/
+
+# machine-specific build output path (see .cargo/config.toml.example)
+.cargo/config.toml
+
+# local Claude Code preview config
+.claude/

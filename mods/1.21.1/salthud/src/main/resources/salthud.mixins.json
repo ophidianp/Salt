@@ -1,0 +1,13 @@
+{
+	"required": false,
+	"package": "gg.salt.hud.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"client": [
+		"GuiMixin",
+		"MouseHandlerMixin",
+		"MultiPlayerGameModeMixin"
+	],
+	"injectors": {
+		"defaultRequire": 0
+	}
+}

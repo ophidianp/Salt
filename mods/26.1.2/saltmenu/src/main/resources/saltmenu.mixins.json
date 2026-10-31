@@ -1,0 +1,18 @@
+{
+	"required": false,
+	"package": "gg.salt.menu.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"client": [
+		"MinecraftMixin",
+		"skin.AbstractButtonMixin",
+		"skin.CheckboxMixin",
+		"skin.EditBoxMixin",
+		"skin.MenuBackgroundMixin",
+		"skin.ScrollAreaMixin",
+		"skin.SelectionListMixin",
+		"skin.SliderMixin"
+	],
+	"injectors": {
+		"defaultRequire": 0
+	}
+}

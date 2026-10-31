@@ -1,0 +1,35 @@
+[package]
+name = "salt-core"
+description = "Launcher engine for Salt Launcher: auth, metadata, downloads, instances, launching, Modrinth/CurseForge."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+anyhow.workspace = true
+thiserror.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tokio.workspace = true
+futures.workspace = true
+reqwest.workspace = true
+uuid.workspace = true
+chrono.workspace = true
+tracing.workspace = true
+sha1.workspace = true
+sha2.workspace = true
+hex.workspace = true
+rand.workspace = true
+zip = { version = "2", default-features = false, features = ["deflate"] }
+dirs = "5"
+keyring = { version = "3", features = ["windows-native", "apple-native", "linux-native"] }
+parking_lot = "0.12"
+urlencoding = "2"
+base64 = "0.22"
+# "Sign in with Minecraft" (verify.rs): the login handshake of a vanilla server.
+rsa = "0.9"
+aes = "0.8"
+cfb8 = "0.8"
+
+[dev-dependencies]
+tracing-subscriber.workspace = true

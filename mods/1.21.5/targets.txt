@@ -1,0 +1,5 @@
+# Minecraft versions these jars are installed for (one per line).
+1.21.2
+1.21.3
+1.21.4
+1.21.5

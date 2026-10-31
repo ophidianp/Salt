@@ -1,0 +1,12 @@
+{
+	"required": false,
+	"package": "gg.salt.freelook.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"client": [
+		"EntityMixin",
+		"CameraMixin"
+	],
+	"injectors": {
+		"defaultRequire": 0
+	}
+}

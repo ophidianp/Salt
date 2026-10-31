@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "salttogglesprint",
+  "version": "${version}",
+  "name": "saltToggleSprint",
+  "description": "Toggle sprint (V) and sneak (B) instead of holding them.",
+  "authors": [
+    "Salt Launcher"
+  ],
+  "license": "MIT",
+  "icon": "assets/salttogglesprint/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "gg.salt.togglesprint.SaltToggleSprint"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.5",
+    "minecraft": ">=1.21.9 <1.21.11",
+    "java": ">=21",
+    "fabric-api": "*",
+    "saltconfig": "*"
+  }
+}

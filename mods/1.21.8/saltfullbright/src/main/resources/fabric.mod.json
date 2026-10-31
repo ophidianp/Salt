@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "saltfullbright",
+  "version": "${version}",
+  "name": "saltFullbright",
+  "description": "G toggles full brightness.",
+  "authors": [
+    "Salt Launcher"
+  ],
+  "license": "MIT",
+  "icon": "assets/saltfullbright/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "gg.salt.fullbright.SaltFullbright"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.5",
+    "minecraft": ">=1.21.6 <1.21.9",
+    "java": ">=21",
+    "fabric-api": "*",
+    "saltconfig": "*"
+  },
+  "mixins": [
+    "saltfullbright.mixins.json"
+  ]
+}

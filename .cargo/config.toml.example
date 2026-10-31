@@ -1,0 +1,7 @@
+# This repo lives inside OneDrive. Rust's build output is thousands of small
+# files (several GB) that OneDrive would try to sync, so the build output
+# goes to a local, non-synced folder instead. Copy this file to config.toml and set your own path; it is git-ignored. Change it if you move
+# the project or build on another machine. (Not under AppData: sandboxed
+# tools such as the Claude desktop app redirect AppData writes elsewhere.)
+[build]
+target-dir = "C:/Users/<you>/SaltLauncherBuild/target"
