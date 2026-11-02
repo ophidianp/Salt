@@ -5,7 +5,7 @@ members = ["crates/salt-core", "launcher", "server"]
 [workspace.package]
 version = "0.1.0"
 edition = "2021"
-license = "MIT"
+license = "LicenseRef-All-Rights-Reserved"
 authors = ["saltClient contributors"]
 
 [workspace.dependencies]

@@ -7,7 +7,7 @@
   "authors": [
     "saltClient"
   ],
-  "license": "MIT",
+  "license": "All-Rights-Reserved",
   "icon": "assets/saltconfig/icon.png",
   "environment": "client",
   "entrypoints": {

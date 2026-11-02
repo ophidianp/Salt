@@ -85,3 +85,8 @@ An installer (`.exe`, NSIS) can be produced with the Tauri CLI:
 
 Not affiliated with Mojang, Microsoft, or Polyfrost. Design notes from OneClient
 and other launchers are in [docs/RESEARCH.md](docs/RESEARCH.md).
+
+## License
+
+All Rights Reserved (ARR). Copyright (c) 2026 Pavan Nemani.
+This project is not open source; see [LICENSE](LICENSE) for what you may and may not do.
