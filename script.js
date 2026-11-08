@@ -164,3 +164,12 @@
     });
   }
 })();
+
+// Liquid glass from the Argon app (liquid-glass.js): refraction with a red/blue fringe on
+// the nav, ghost buttons, feature cards and FAQ (Chromium), a gliding lens on the nav links.
+if (window.LiquidGlass) {
+  LiquidGlass.init({ selectors: ".pill.ghost, .feature, .faq", strength: 50, lens: [".nav-links"], lensItems: "a", max: 16 });
+  document.querySelector(".faq")?.classList.add("lg-strong");
+} else {
+  document.documentElement.classList.add("no-lens");
+}

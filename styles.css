@@ -31,6 +31,12 @@
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
   --max: 1120px;
   color-scheme: dark;
+
+  /* liquid glass (liquid-glass.css): Salt's dark ground */
+  --g-tint: color-mix(in srgb, var(--surface) 52%, transparent);
+  --g-tint-strong: color-mix(in srgb, var(--surface) 74%, transparent);
+  --g-edge: rgba(150, 175, 215, 0.14);
+  --lens-bg: rgba(150, 175, 215, 0.12);
 }
 
 @media (prefers-color-scheme: light) {
@@ -47,6 +53,12 @@
     --warn: #b0640f;
     --bar-grey: #d6dae1;
     color-scheme: light;
+    --g-tint: rgba(255, 255, 255, 0.42);
+    --g-tint-strong: rgba(255, 255, 255, 0.66);
+    --g-edge: rgba(20, 40, 80, 0.1);
+    --g-edge-dark: rgba(0, 0, 0, 0.08);
+    --g-shadow-a: 0.12;
+    --lens-bg: rgba(20, 40, 80, 0.07);
   }
 }
 :root[data-theme="light"] {
@@ -62,13 +74,24 @@
   --warn: #b0640f;
   --bar-grey: #d6dae1;
   color-scheme: light;
+  --g-tint: rgba(255, 255, 255, 0.42);
+  --g-tint-strong: rgba(255, 255, 255, 0.66);
+  --g-edge: rgba(20, 40, 80, 0.1);
+  --g-edge-dark: rgba(0, 0, 0, 0.08);
+  --g-shadow-a: 0.12;
+  --lens-bg: rgba(20, 40, 80, 0.07);
 }
 
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 96px; }
 body {
   margin: 0;
-  background: var(--bg);
+  background:
+    radial-gradient(42rem 30rem at 88% 6%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 70%),
+    radial-gradient(36rem 28rem at 6% 30%, color-mix(in srgb, var(--accent) 15%, transparent), transparent 70%),
+    radial-gradient(40rem 30rem at 94% 58%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 70%),
+    radial-gradient(38rem 30rem at 8% 84%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 70%),
+    var(--bg);
   color: var(--text);
   font: 16px/1.6 var(--font);
   -webkit-font-smoothing: antialiased;
@@ -113,17 +136,15 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
   align-items: center;
   gap: 6px;
   padding: 7px 7px 7px 16px;
-  border: 1px solid var(--line);
   border-radius: 999px;
-  background: color-mix(in srgb, var(--surface) 82%, transparent);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
 }
 .brand { display: flex; align-items: center; gap: 9px; font-family: var(--display); font-weight: 800; font-size: 1.08rem; text-decoration: none; margin-right: auto; }
 .brand img { border-radius: 7px; }
 .nav-links { display: flex; gap: 2px; }
-.nav-links a { text-decoration: none; color: var(--text-2); font-size: 0.92rem; padding: 7px 12px; border-radius: 999px; transition: color 0.2s, background 0.2s; }
-.nav-links a:hover { color: var(--text); background: var(--surface-2); }
+.nav-links { position: relative; }
+.nav-links a { text-decoration: none; color: var(--text-2); font-size: 0.92rem; padding: 7px 12px; border-radius: 999px; transition: color 0.2s; }
+.nav-links a:hover { color: var(--text); }
+.no-lens .nav-links a:hover { background: var(--surface-2); }
 
 /* --- pill buttons ----------------------------------------------------------- */
 .pill {
@@ -135,12 +156,14 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
   font-weight: 700;
   text-decoration: none;
   border: 1px solid transparent;
-  transition: transform 0.25s var(--ease), background 0.4s var(--ease), box-shadow 0.25s;
+  transition: transform 0.5s var(--spring), background 0.4s var(--ease), box-shadow 0.25s;
   white-space: nowrap;
 }
-.pill:hover { transform: translateY(-1px); box-shadow: 0 10px 30px -10px color-mix(in srgb, var(--accent) 70%, transparent); }
-.pill.ghost { background: transparent; color: var(--text); border-color: var(--line-2); }
-.pill.ghost:hover { background: var(--surface-2); box-shadow: none; }
+.pill:hover { transform: translateY(-2px) scale(1.03); box-shadow: 0 10px 30px -10px color-mix(in srgb, var(--accent) 70%, transparent); }
+.pill:active { transform: scale(0.95); transition-duration: 0.12s; }
+.pill.ghost { color: var(--text); border-color: transparent; background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0) 45%), var(--g-tint); }
+.pill.ghost:not(.lg) { background: transparent; border-color: var(--line-2); }
+.pill.ghost:hover { box-shadow: none; }
 .pill.small { padding: 7px 15px; font-size: 0.9rem; }
 .pill.big { padding: 13px 24px; font-size: 1rem; }
 .pill svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
@@ -181,7 +204,9 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
   cursor: pointer;
   transition: transform 0.2s var(--ease), box-shadow 0.2s;
 }
-.swatch:hover { transform: scale(1.08); }
+.swatch { transition: transform 0.5s var(--spring), box-shadow 0.2s; }
+.swatch:hover { transform: scale(1.14); }
+.swatch:active { transform: scale(0.9); transition-duration: 0.12s; }
 .swatch[aria-checked="true"] { box-shadow: 0 0 0 2px var(--c); }
 
 /* --- sections ------------------------------------------------------------------ */
@@ -233,7 +258,10 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
   background: var(--surface);
   border: 1px solid var(--line);
   min-width: 0;
+  transition: transform 0.6s var(--spring);
 }
+.feature.lg { border: 0; background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0) 45%), var(--g-tint); }
+.feature:hover { transform: translateY(-4px); }
 .feature p { color: var(--text-2); font-size: 0.95rem; }
 .feature .more { margin-top: auto; padding-top: 4px; color: var(--accent); font-size: 0.9rem; text-decoration: none; }
 .feature .more:hover { text-decoration: underline; }
@@ -277,6 +305,8 @@ kbd {
 
 /* FAQ */
 .faq { display: flex; flex-direction: column; border-top: 1px solid var(--line); }
+.faq.lg { border-top: 0; border-radius: var(--radius); padding: 4px 24px; }
+.faq.lg details:last-child { border-bottom: 0; }
 .faq details { border-bottom: 1px solid var(--line); }
 .faq summary {
   cursor: pointer; list-style: none;
@@ -289,7 +319,7 @@ kbd {
 .faq details[open] summary::after { transform: rotate(45deg); }
 .faq .answer { overflow: hidden; }
 .faq details p { color: var(--text-2); padding: 0 0 20px; max-width: 70ch; }
-.faq summary { transition: color 0.2s, padding-left 0.3s var(--ease); }
+.faq summary { transition: color 0.2s, padding-left 0.5s var(--spring); }
 .faq summary:hover { color: var(--accent); padding-left: 6px; }
 .faq details.closing summary::after { transform: rotate(0deg); }
 .faq a { color: var(--accent); }
