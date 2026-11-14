@@ -52,8 +52,8 @@ Tools, and a Java 25+ JDK for the mods.
 # launcher (debug)
 cargo run -p salt-launcher
 
-# release build with your approved Microsoft client ID baked in
-$env:SALT_MS_CLIENT_ID = "<your Azure client id>"
+# release build (saltClient's approved Microsoft client ID is built in;
+# set SALT_MS_CLIENT_ID only to use your own Azure app)
 cargo build --release -p salt-launcher
 
 # salt mods (+ your Chlorine checkout) -> %APPDATA%\SaltLauncher\salt-mods

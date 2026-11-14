@@ -88,13 +88,20 @@ pub struct Settings {
     pub seeded_versions: Vec<String>,
 }
 
+/// saltClient's Azure app, approved by Mojang for the Minecraft services API.
+/// A client ID is a public identifier, not a secret. SALT_MS_CLIENT_ID at
+/// build time overrides it (for forks with their own app).
+pub const DEFAULT_MS_CLIENT_ID: &str = match option_env!("SALT_MS_CLIENT_ID") {
+    Some(id) => id,
+    None => "875a8c59-da06-4447-a047-12e6573e44f7",
+};
+
 impl Default for Settings {
     fn default() -> Self {
         Self {
             onboarded: false,
-            // Set SALT_MS_CLIENT_ID when building to ship your approved
-            // Azure app ID; users can still override it in Settings.
-            microsoft_client_id: option_env!("SALT_MS_CLIENT_ID").unwrap_or("").to_string(),
+            // Users can still override it in Settings.
+            microsoft_client_id: DEFAULT_MS_CLIENT_ID.to_string(),
             theme: Theme::default(),
             java_path: None,
             default_memory_mb: 4096,
@@ -127,6 +134,9 @@ impl Settings {
                 s.theme.background = d.background;
             }
             s.theme.style_version = STYLE_VERSION;
+        }
+        if s.microsoft_client_id.trim().is_empty() {
+            s.microsoft_client_id = DEFAULT_MS_CLIENT_ID.to_string();
         }
         s
     }

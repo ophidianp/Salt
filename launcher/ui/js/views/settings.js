@@ -170,7 +170,7 @@ function integrations(root) {
     ),
     h("div.section.glass", h("h2", "Modrinth"), h("p.desc", { style: { margin: 0 } }, "Works out of the box — no key needed.")),
     h("div.section.glass", h("h2", "Microsoft sign-in"),
-      h("p.desc", "The Azure app ID Salt signs in with. Builds can bake one in with SALT_MS_CLIENT_ID; see docs/MICROSOFT_LOGIN.md."),
+      h("p.desc", "The Azure app ID saltClient signs in with. saltClient's approved app is built in; only change this if you run your own. Clear it to go back to the default."),
       setting("Client ID", null, ms),
     ),
   );

@@ -7,6 +7,11 @@ To do that, Salt needs an **Azure application (client) ID** that Mojang has
 approved for the Minecraft API. This is a one-time setup for whoever ships
 Salt; end users never see it once it's baked into a build.
 
+> saltClient's own approved app (`875a8c59-da06-4447-a047-12e6573e44f7`) is
+> built in as the default (`DEFAULT_MS_CLIENT_ID` in
+> `crates/salt-core/src/settings.rs`). You only need the steps below if you
+> ship a fork under your own Azure app.
+
 ## 1. Register an Azure app
 
 1. Go to <https://portal.azure.com> → **App registrations** → **New registration**.
