@@ -352,3 +352,20 @@ kbd {
   .mod { grid-template-columns: minmax(0, 1fr); }
   .mod dd.keys { grid-column: 1; grid-row: auto; justify-self: start; }
 }
+
+/* --- minimal layer -------------------------------------------------------------
+   Flat page, one accent, hairline dividers instead of boxes, no shadows or glows.
+   Liquid glass stays on the nav bar only. Restyling only; no content is hidden. */
+body { background: var(--bg); }
+h2 { font-weight: 700; }
+.eyebrow { color: var(--text-3); letter-spacing: 0.12em; font-size: 0.72rem; }
+.pill { border-radius: 10px; }
+.pill.ghost, .pill.ghost:hover { background: transparent; }
+.pill.ghost:hover { border-color: var(--text); }
+.hero-shot img { box-shadow: none; }
+.features { gap: 36px 40px; }
+.feature, .feature:hover { padding: 24px 0 0; border: 0; border-top: 1px solid var(--line); border-radius: 0; background: none; }
+.stats { border-bottom: 0; }
+.band-vers code { background: none; }
+kbd { background: none; border-bottom-width: 1px; }
+.closer img { border-radius: 12px; }
