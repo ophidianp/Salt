@@ -11,11 +11,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500&amp;family=Instrument+Serif:ital@0;1&amp;display=swap">
 <link rel="stylesheet" href="liquid-glass.css?v=2">
-<link rel="stylesheet" href="styles.css?v=5">
+<link rel="stylesheet" href="styles.css?v=6">
 <script src="liquid-glass.js?v=2" data-auto defer></script>
 <meta property="og:title" content="saltClient">
 <meta property="og:description" content="Lightweight. Clean. Yours. A Minecraft launcher with its own HUD and mods, from 1.21 to 26.3.">
 <meta property="og:image" content="assets/img/title-screen.webp">
+<script>try{var a=localStorage.getItem("salt-accent");if(/^#[0-9a-f]{6}$/i.test(a))document.documentElement.style.setProperty("--accent",a)}catch(e){}</script>
+<script src="accent.js?v=1" defer></script>
 </head>
 <body>
 <header class="header" data-glass="60">
@@ -36,13 +38,13 @@
 <p class="lead">A fast launcher with its own Fabric mods built in: a HUD you drag into place, zoom, freelook, toggle sprint, fullbright and a cleaner menu. It sets up every release from 1.21 to 26.3 for you.</p>
 <div class="actions"><a class="btn primary" href="https://github.com/ophidianp/Salt/releases/latest/download/saltClient-Setup.exe">Download for Windows ↓</a><a class="btn" href="https://github.com/ophidianp/Salt">View source ↗</a></div>
 <p class="fine">v0.1.0 · free · needs a Minecraft: Java Edition account</p>
-<figure style="margin-top:56px"><img src="assets/img/title-screen.webp" width="1600" height="900" alt="Salt's title screen in Minecraft 26.3: the Salt cube logo, the tagline Lightweight. Clean. Yours., and rounded Singleplayer, Multiplayer, Options, Mods and Quit buttons over a blurred world."><figcaption>The Salt title screen, in game on 26.3</figcaption></figure></section>
+<figure style="margin-top:56px"><img data-recolor src="assets/img/title-screen.webp" width="1600" height="900" alt="Salt's title screen in Minecraft 26.3: the Salt cube logo, the tagline Lightweight. Clean. Yours., and rounded Singleplayer, Multiplayer, Options, Mods and Quit buttons over a blurred world."><figcaption>The Salt title screen, in game on 26.3</figcaption></figure></section>
 <section class="wrap section split">
 <div class="section-head"><p class="eyebrow">Accent</p>
 <h2>One accent, <em>everywhere.</em></h2>
-<p>Pick a colour in the launcher and the game follows: buttons, sliders, the HUD and the config screen all pick it up.</p>
+<p>Pick a colour in the launcher and the game follows: buttons, sliders, the HUD and the config screen all pick it up. Try it on this page.</p>
 </div>
-<article class="card "><p class="label">Picks it up</p><p></p><ul class="tags"><li>buttons</li><li>sliders</li><li class="on">the HUD</li><li>the config screen</li></ul></article></section>
+<article class="card "><p class="label">Try it</p><p></p><div class="swatches" role="radiogroup" aria-label="Accent colour"><button class="swatch" type="button" role="radio" aria-checked="true" data-accent="#7cc8ff" style="--c:#7cc8ff" aria-label="Ice blue"></button><button class="swatch" type="button" role="radio" aria-checked="false" data-accent="#f06aa6" style="--c:#f06aa6" aria-label="Pink"></button><button class="swatch" type="button" role="radio" aria-checked="false" data-accent="#63e6b0" style="--c:#63e6b0" aria-label="Mint"></button><button class="swatch" type="button" role="radio" aria-checked="false" data-accent="#c4a8ff" style="--c:#c4a8ff" aria-label="Lavender"></button><button class="swatch" type="button" role="radio" aria-checked="false" data-accent="#ffb86b" style="--c:#ffb86b" aria-label="Amber"></button></div></article></section>
 <section class="wrap section" id="launcher">
 <div class="section-head"><p class="eyebrow">The launcher</p>
 <h2>Make an instance. <em>Press Play.</em></h2>
@@ -77,7 +79,7 @@
 <div class="row"><p class="label">saltFullbright</p><div><p>Full brightness without touching your gamma setting.</p><p class="meta" style="margin-top:6px"><kbd>G</kbd></p></div></div>
 <div class="row"><p class="label">saltConfig</p><div><p>The settings screen for all of the above, plus a mod list.</p><p class="meta" style="margin-top:6px"><kbd>Right Shift</kbd></p></div></div>
 </div>
-<div class="shots"><figure><img src="assets/img/salt-config.webp" width="1600" height="900" loading="lazy" alt="The saltConfig screen: a rounded dark window listing the Salt mods and other installed mods on the left, with toggles and options for saltFreelook on the right."><figcaption>saltConfig: every mod's settings in one place, including other mods' Cloth Config screens</figcaption></figure><figure><img src="assets/img/options-reskin.webp" width="1600" height="900" loading="lazy" alt="Minecraft's Options screen with Salt's rounded dark buttons and an accent-filled FOV slider."><figcaption>Vanilla Options, reskinned. Modded screens that use vanilla widgets get the same look.</figcaption></figure></div>
+<div class="shots"><figure><img data-recolor src="assets/img/salt-config.webp" width="1600" height="900" loading="lazy" alt="The saltConfig screen: a rounded dark window listing the Salt mods and other installed mods on the left, with toggles and options for saltFreelook on the right."><figcaption>saltConfig: every mod's settings in one place, including other mods' Cloth Config screens</figcaption></figure><figure><img data-recolor src="assets/img/options-reskin.webp" width="1600" height="900" loading="lazy" alt="Minecraft's Options screen with Salt's rounded dark buttons and an accent-filled FOV slider."><figcaption>Vanilla Options, reskinned. Modded screens that use vanilla widgets get the same look.</figcaption></figure></div>
 </section>
 <section class="wrap section" id="versions">
 <div class="section-head"><p class="eyebrow">Versions</p>
