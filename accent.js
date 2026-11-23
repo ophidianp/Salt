@@ -4,6 +4,7 @@
 (() => {
   const root = document.documentElement;
   const swatches = [...document.querySelectorAll(".swatch")];
+  const name = document.getElementById("acc-name");
   // the five accents the launcher offers (the swatches on the home page)
   const PALETTE = ["#7cc8ff", "#f06aa6", "#63e6b0", "#c4a8ff", "#ffb86b"];
 
@@ -115,7 +116,11 @@
     current = hex;
     root.style.setProperty("--accent", hex);
     root.style.setProperty("--accent-ink", inkFor(hex));
-    for (const s of swatches) s.setAttribute("aria-checked", String(s.dataset.accent === hex));
+    for (const s of swatches) {
+      const on = s.dataset.accent === hex;
+      s.setAttribute("aria-checked", String(on));
+      if (on && name) name.textContent = s.getAttribute("aria-label");
+    }
     paintShots();
   };
 
